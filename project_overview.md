@@ -1,5 +1,7 @@
 ##Project Overview - Ship Detection - ImageKings
 
+[APH] 1/9/2019 See latest update below...
+
 Project Goal:
 
 Generate a bounding rectangle predicting ship locations using test data set.
@@ -19,3 +21,30 @@ Challenges include working through the descrepencies between the descriptions in
 Current Status:
 
 Downloading data to Jupyter notebook via Kaggle API, increased disk quota to 100 GB
+
+>>> Update 1/9/2019
+
+Using Sagemaker Semantic Segmentation (ignore above content)
+
+Create 4 directories in S3 (that align with the segmenation example code along these lines):
+
+1. Training JPEGs - contains training jpgs as input
+
+2. Training Annotations - PNGs created from RLC training ship mask data, (ground truth) pixel index values of 1 = ship, values of 0 = notship (need to write python to do this for entries in train_ship_segmentation.csv)
+
+3. Validation JPEGs - contains validation jpgs as input
+
+4. Validation annotations - PNGs created from RLC validation ship mask data (ground truth), pixel inded values of 1 = ship, values of 0 = notship
+
+Move data into S3
+
+Setup instance for training
+
+Train
+
+Check results
+
+Tune hyperparameters
+
+
+
